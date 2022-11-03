@@ -3,15 +3,16 @@ const bcrypt = require("bcryptjs");
 const User = require("../models/user");
 
 const usersGet = async (req, res = response) => {
-  const {
-    query: { limit = 5, from = 0 },
-  } = req;
-  const [total, users] = await Promise.all([
-    User.countDocuments({ stage: true }),
-    User.find({ stage: true }).skip(from).limit(limit),
-  ]);
-  //repuesta
-  res.status(200).json({ total, users });
+  // const {
+  //   query: { limit = 5, from = 0 },
+  // } = req;
+  // const [total, users] = await Promise.all([
+  //   User.countDocuments({ stage: true }),
+  //   User.find({ stage: true }).skip(from).limit(limit),
+  // ]);
+  // //repuesta
+  // res.status(200).json({ total, users });
+  res.status(200).json({ msg: "hola" });
 };
 const usersPost = async (req, res = response) => {
   const {
