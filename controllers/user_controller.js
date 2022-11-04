@@ -42,13 +42,13 @@ const usersPut = async (req, res = response) => {
 const usersDelete = async (req, res = response) => {
   const {
     params: { id },
+    user: userAuth,
   } = req;
   //borrar fisicamente
   // user = await user.findOneAndDelete(id);
   //cambiar estado
-  console.log("id", id);
   const user = await User.findByIdAndUpdate(id, { stage: false });
-  res.status(200).json(user);
+  res.status(200).json({ user, userAuth });
 };
 const usersPatch = (req, res = response) => {
   res.status(200).json({ msg: "PATCH API - CONTROLLER" });
