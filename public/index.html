@@ -84,7 +84,7 @@
 
       var url = window.location.hostname.includes("localhost")
         ? "http://localhost:8080/api/auth/google"
-        : "https://restserver-john-reyes.herokuapp.com/api/auth/google";
+        : "http://restserver-john-reyes.herokuapp.com/api/auth/google";
 
       function onSignIn(googleUser) {
         var profile = googleUser.getBasicProfile();
