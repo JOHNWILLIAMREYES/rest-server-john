@@ -19,6 +19,7 @@ const UserSchema = Schema({
   },
   role: {
     type: String,
+    default: "USER_ROLE",
     // enum: ["ADMIN_ROL", "USER_ROLE"],
   },
   stage: {
